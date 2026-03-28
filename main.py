@@ -34,10 +34,12 @@ def view_expenses():
                 return
             
             print("\n--- ALL EXPENSES ---")
+            print(f"{'Date':<12} {'Amount':<10} {'Category':<12} {'Description':<15}")
+            print("-" * 55)
 
             for line in lines[1:]:
                 date, amount, category, description = line.strip().split(",")
-                print(f'Date: {date} | Amount: {amount} | Category: {category} | Note: {description}')
+                print(f"{date:<12} {amount:<10} {category:<12} {description:<15}")
 
     except FileNotFoundError:
         print("Expense file not found.")
@@ -89,6 +91,8 @@ while True:
         break
     else:
         print('Invalid choice. Try again.')
+
+
 
 
 
